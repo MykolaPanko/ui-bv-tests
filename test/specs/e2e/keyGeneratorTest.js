@@ -1,5 +1,3 @@
-var expect = require("chai").expect;
-
     describe('cloud seo key page testing', () => {
         const site = ["https://cloudseokey.flynn-prod-eu-west-1.nexus.bazaarvoice.com/","https://cloudseokey.flynn-prod-us-east-1.nexus.bazaarvoice.com/"];
         for (let i =0; i < site.length; i++)
@@ -30,7 +28,6 @@ var expect = require("chai").expect;
                 const key2 = $('.row').getText().toString();
                 if ($('.remodal-is-opened')==false) {
                     console.log("modal appeared");
-                    browser.error;
                 }
                 else console.log("modal not appeared");
                 console.log("generated key2 = " + key2);

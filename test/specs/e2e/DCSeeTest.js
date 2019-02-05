@@ -1,3 +1,4 @@
+
 describe('dcsee page testing', () => {
     const site = "https://dcsee.flynn-prod-us-east-1.nexus.bazaarvoice.com/";
         it('run test for valid url', () => {
@@ -10,7 +11,7 @@ describe('dcsee page testing', () => {
             const createButton = $('.buttonSubmitChild');
             createButton.click();
             const resultSection = $('//*[@class=\'Block mt-1rem mb-1rem p-1rem_1p5rem_3rem m-0 bc-white Content\']');
-            if (resultSection.waitForDisplayed("test was running"))
+            if (resultSection.waitForDisplayed("test was running successfully"))
             {
             console.log("test was running")
             }

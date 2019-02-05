@@ -40,7 +40,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -144,8 +144,17 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: () => {
+// Setup chai
+        let chai = require('chai');
+        //let chaiString = require('chai-string');
+        //let chaiAsPromised = require('chai-as-promised');
+        chai.should();
+        //chai.use(chaiAsPromised);
+        global.expect = chai.expect;
+
+// adding the custom WDIO command ('headlessLogin') to 'browser.' calls
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
