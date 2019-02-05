@@ -1,0 +1,12 @@
+[
+  {
+  "name": "cloudseokey_us",
+  "env": "prod_us",
+  "url": "https://cloudseokey.flynn-prod-us-east-1.nexus.bazaarvoice.com/"
+},
+
+{"name": "cloudseokey_eu",
+"env": "prod_eu",
+"url": "https://cloudseokey.flynn-prod-eu-west-1.nexus.bazaarvoice.com/"
+}
+]
