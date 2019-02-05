@@ -19,7 +19,7 @@
                 browser.url(site[i]);
                 console.log("testing site", site[i]);
                 const clientNameField = $('#clientName');
-                clientNameField.waitForDisplayed(1000);
+                clientNameField.waitForDisplayed();
                 clientNameField.click();
                 clientNameField.clear;
                 clientNameField.setValue('<script>alert("alert message!!!")</script>');

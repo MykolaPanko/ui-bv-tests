@@ -5,7 +5,7 @@ describe('dcsee page testing', () => {
             console.log("testing site", site);
             browser.url(site);
             const productUrlField = $('//input[@placeholder=\'Product Page URL\']');
-            productUrlField.waitForDisplayed(10000);
+            productUrlField.waitForDisplayed();
             productUrlField.click();
             productUrlField.setValue('https://www.andreashop.sk/philips-oneblade-qp-22055');
             const createButton = $('.buttonSubmitChild');
@@ -13,8 +13,10 @@ describe('dcsee page testing', () => {
             const resultSection = $('//*[@class=\'Block mt-1rem mb-1rem p-1rem_1p5rem_3rem m-0 bc-white Content\']');
             if (resultSection.waitForDisplayed("test was running successfully"))
             {
-            console.log("test was running")
+            console.log("test was running successfully")
             }
             else console.log("error");
+            expect(resultSection.isDisplayed()).to.be.true;
+
         });
     });

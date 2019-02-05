@@ -147,11 +147,9 @@ exports.config = {
     before: () => {
 // Setup chai
         let chai = require('chai');
-        //let chaiString = require('chai-string');
-        //let chaiAsPromised = require('chai-as-promised');
         chai.should();
-        //chai.use(chaiAsPromised);
         global.expect = chai.expect;
+        browser.maximizeWindow();
 
 // adding the custom WDIO command ('headlessLogin') to 'browser.' calls
     },
