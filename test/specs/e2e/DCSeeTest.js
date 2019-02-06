@@ -1,7 +1,7 @@
 
 describe('dcsee page testing', () => {
     const site = "https://dcsee.flynn-prod-us-east-1.nexus.bazaarvoice.com/";
-        it('run test for valid url', () => {
+    it('run test for valid url', () => {
             console.log("testing site", site);
             browser.url(site);
             const productUrlField = $('//input[@placeholder=\'Product Page URL\']');
@@ -17,6 +17,23 @@ describe('dcsee page testing', () => {
             }
             else console.log("error");
             expect(resultSection.isDisplayed()).to.be.true;
-
+            expect($('//*[contains(text(),\'BV Loader\')]').isDisplayed()).to.be.true;
+            expect($('//*[contains(text(),\'Client Configs\')]').isDisplayed()).to.be.true;
+            expect($('//*[contains(text(),\'Product Page JavaScript Inspection\')]').isDisplayed()).to.be.true;
+            expect($('//*[contains(text(),\'Catalog API\')]').isDisplayed()).to.be.true;
         });
+    it('run test for invalid url', () => {
+             console.log("testing site", site);
+             browser.url(site);
+             const productUrlField = $('//input[@placeholder=\'Product Page URL\']');
+             productUrlField.waitForDisplayed();
+             productUrlField.click();
+             productUrlField.setValue('https://www.andreashop.sk/philips-oneblade-qp-2205511');
+             const createButton = $('.buttonSubmitChild');
+             createButton.click();
+             const errorMessage = $('div.MessageBody');
+             errorMessage.waitForDisplayed();
+             console.log(errorMessage.getText());
+             expect($('div.MessageBody')).to.match(/[Unable to get BV Loader TypeError: Cannot destructure property `clientname` of 'undefined' or 'null'.]/);
+         });
     });
