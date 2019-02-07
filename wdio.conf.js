@@ -77,11 +77,11 @@ exports.config = {
     baseUrl: 'http://localhost',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 20000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
-    connectionRetryTimeout: 90000,
+    connectionRetryTimeout: 60000,
     //
     // Default request retries count
     connectionRetryCount: 3,
@@ -150,6 +150,11 @@ exports.config = {
         chai.should();
         global.expect = chai.expect;
         browser.maximizeWindow();
+
+        //const Wrappers = require ('./helper/Wrappers.js');
+        //const {LOCATORS_DCSEE} = require('./helper/testdata/Locators.js');
+        //const {VALUES_DCSEE} = require('./helper/testdata/Data.js');
+        //module.exports = {LOCATORS_DCSEE,VALUES_DCSEE};
 
 // adding the custom WDIO command ('headlessLogin') to 'browser.' calls
     },
