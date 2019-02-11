@@ -17,5 +17,10 @@ const LOCATORS_CLOUD_SEO_KEY = {
     KEY_ROW:'.row'
 };
 
+const LOCATORS_FIT = {
+    MASTER_CLIENT_FIELD:'#client_1',
+    CLIENT_1_FIELD:'#client_2'
+}
 
-module.exports = {LOCATORS_DCSEE, LOCATORS_CLOUD_SEO_KEY};
+
+module.exports = {LOCATORS_DCSEE, LOCATORS_CLOUD_SEO_KEY, LOCATORS_FIT};
