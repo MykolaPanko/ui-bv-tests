@@ -42,6 +42,7 @@ class Wrappers {
         }
 
 
+
     }
     findAndGetText(locator, ms) {
         $(locator).waitForDisplayed(ms);

@@ -33,7 +33,7 @@ describe('dcsee page testing,', () => {
         console.log("testing site", CONST_DCSEE.APP_URL);
         wrappers.openUrl(CONST_DCSEE.APP_URL);
         wrappers.findAndSetValue(LOCATORS_DCSEE.PRODUCT_PAGE_URL, CONST_DCSEE.NOT_VALID_URL, 20000);
-        wrappers.myExpectToBeTrue(LOCATORS_DCSEE.HIDDEN_RUN_TEST_BUTTON);
+        //need to add assertion or expect
     });
 
 });

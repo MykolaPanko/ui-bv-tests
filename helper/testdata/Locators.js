@@ -1,7 +1,7 @@
 
 
 const LOCATORS_DCSEE = {
-    RUN_TEST_BUTTON:'.buttonSubmitChild',
+    RUN_TEST_BUTTON:'//div[@class=\'buttonSubmitChild\']',
     HIDDEN_RUN_TEST_BUTTON:'//div[@class=\'buttonSubmitSpinner buttonSubmitHidden\']',
     PRODUCT_PAGE_URL: '//input[@placeholder=\'Product Page URL\']',
     RESULT_SECTION:'//*[@class=\'Block mt-1rem mb-1rem p-1rem_1p5rem_3rem m-0 bc-white Content\']',
