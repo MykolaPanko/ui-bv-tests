@@ -9,7 +9,9 @@ describe('dcsee page testing,', () => {
     it('run test for valid url', () => {
         console.log("testing site", CONST_DCSEE.APP_URL);
         wrappers.openUrl(CONST_DCSEE.APP_URL);
-        wrappers.findAndSetValue(LOCATORS_DCSEE.PRODUCT_PAGE_URL, CONST_DCSEE.VALID_URL,20000);
+        wrappers.findAndSetValue(LOCATORS_DCSEE.PRODUCT_PAGE_URL, CONST_DCSEE.VALID_URL,2000);
+        console.log("click button = " + wrappers.checkForElementPresent(LOCATORS_DCSEE.RUN_TEST_BUTTON,2000));
+        wrappers.findAndClick(LOCATORS_DCSEE.RUN_TEST_BUTTON);
         wrappers.findAndClick(LOCATORS_DCSEE.RUN_TEST_BUTTON,2000);
         wrappers.checkForElementPresent (LOCATORS_DCSEE.RESULT_SECTION, 20000);
         wrappers.myExpectToBeTrue(LOCATORS_DCSEE.RESULT_SECTION);
@@ -33,7 +35,7 @@ describe('dcsee page testing,', () => {
         console.log("testing site", CONST_DCSEE.APP_URL);
         wrappers.openUrl(CONST_DCSEE.APP_URL);
         wrappers.findAndSetValue(LOCATORS_DCSEE.PRODUCT_PAGE_URL, CONST_DCSEE.NOT_VALID_URL, 20000);
-        //need to add assertion or expect
+        expect($(LOCATORS_DCSEE.HIDDEN_RUN_TEST_BUTTON).isExisting());
     });
 
 });

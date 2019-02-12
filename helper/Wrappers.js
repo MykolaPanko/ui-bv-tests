@@ -11,7 +11,7 @@ class Wrappers {
 
 
     findAndSetValue(locator, value, ms) {
-        $(locator).waitForDisplayed(ms);
+        $(locator).waitForExist(ms);
         $(locator).click();
         $(locator).setValue(value);
     };
