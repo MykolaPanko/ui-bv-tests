@@ -48,6 +48,11 @@ class Wrappers {
         const text = $(locator).getText();
         return text;
     }
+    findAndGetValue(locator, ms) {
+        $(locator).waitForDisplayed(ms);
+        const value = $(locator).getValue();
+        return value;
+    }
 }
 
 

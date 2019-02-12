@@ -9,10 +9,13 @@ describe('FIT page testing,', () => {
         wrappers.openUrl(CONST_FIT.APP_URL);
         wrappers.findAndSetValue(LOCATORS_FIT.MASTER_CLIENT_FIELD,'puma',10000);
         wrappers.findAndSetValue(LOCATORS_FIT.CLIENT_1_FIELD,'pumaeu',10000);
-        wrappers.checkForElementPresent('//a[@href=\'#\']//strong[contains(text(),\'pumae\')]');
-        wrappers.findAndClick('//a[@href=\'#\']//strong[contains(text(),\'pumae\')]',10000);
-        wrappers.findAndClick('#submit');
-        wrappers.checkForElementPresent($('//p[contains(text(),\'Check matches for\')]'),10000);
-        wrappers.myExpectToBeTrue('//pre[@class=\'c_results\']');
+        wrappers.checkForElementPresent(LOCATORS_FIT.SUGGESTION_PUMAEU);
+        wrappers.findAndClick(LOCATORS_FIT.SUGGESTION_PUMAEU);
+        wrappers.findAndClick(LOCATORS_FIT.ADD_ADDITIONAL_CLIENT_BUTTON);
+        wrappers.findAndSetValue(LOCATORS_FIT.CLIENT_2_FIELD,'pumade',1000)
+        wrappers.findAndClick(LOCATORS_FIT.SUGGESTION_PUMADE,10000);
+        wrappers.findAndClick(LOCATORS_FIT.RUN_FIT_BUTTON);
+        wrappers.checkForElementPresent(LOCATORS_FIT.CHECK_MATCHES_SECTION,10000);
+        wrappers.myExpectToBeTrue(LOCATORS_FIT.RESULT_SECTION);
     });
 });
